@@ -136,7 +136,75 @@ O usando la tarea de VS Code:
 
 ---
 
-## 🗺️ Flujo de la aplicación
+## � Diagrama de clases
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Identificable {
+        <<interface>>
+        +getCodigo() int
+    }
+
+    class Calculable {
+        <<interface>>
+        +calcularPrecioFinal() double
+    }
+
+    class Categoria {
+        -int codigo
+        -String nombre
+        -String descripcion
+        +getCodigo() int
+        +getNombre() String
+        +getDescripcion() String
+    }
+
+    class Articulo {
+        -int codigo
+        -String nombre
+        -double precio
+        -String descripcion
+        -Categoria categoria
+        +getCodigo() int
+        +getNombre() String
+        +getPrecio() double
+        +getCategoria() Categoria
+    }
+
+    class ArticuloElectronico {
+        -double IVA$ = 0.105
+        +calcularPrecioFinal() double
+    }
+
+    class ArticuloAlimenticio {
+        -double IVA$ = 0.21
+        +calcularPrecioFinal() double
+    }
+
+    class Repositorio~T~ {
+        -ArrayList~T~ lista
+        +agregar(T) void
+        +listar() List~T~
+        +buscarPorCodigo(int) T
+        +eliminar(T) void
+        +estaVacio() boolean
+    }
+
+    Identificable <|.. Categoria
+    Identificable <|.. Articulo
+    Calculable <|.. ArticuloElectronico
+    Calculable <|.. ArticuloAlimenticio
+    Articulo <|-- ArticuloElectronico
+    Articulo <|-- ArticuloAlimenticio
+    Articulo --> Categoria : tiene
+    Repositorio~T~ ..> Identificable : T extends
+```
+
+---
+
+## �🗺️ Flujo de la aplicación
 
 ```
 MenuPrincipal
