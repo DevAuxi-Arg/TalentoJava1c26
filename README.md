@@ -6,14 +6,15 @@
 </div>
 
 
-<div style="display: flex; align-items: center; gap: 24px;">
-  <div style="flex: 0 0 auto; text-align: left;">
-    <img src="./assets/toad.png" alt="Toad" width="100">
-  </div>
-  <div style="flex: 1; text-align: left;">
-    Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). <br>Aplica principios de <strong>Programación Orientada a Objetos</strong>: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
-  </div>
-</div>
+<table>
+  <tr>
+    <td valign="middle"><img src="./assets/toad.png" alt="Toad" width="100"></td>
+    <td valign="middle">
+      Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). <br>
+      Aplica principios de <strong>Programación Orientada a Objetos</strong>: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
+    </td>
+  </tr>
+</table>
 
 ---
 
