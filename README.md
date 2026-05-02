@@ -1,8 +1,19 @@
-# 🗂️ Sistema CRUD — Artículos y Categorías
+<div align="center">
+  <img src="./assets/logo.png" alt="Logo" width="200">
 
-**Preentrega · Talento Tech Java · 1° cuatrimestre 2026**
+  # 🗂️ Sistema CRUD — Artículos y Categorías
+  
+</div>
 
-Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). Aplica principios de **Programación Orientada a Objetos**: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
+
+<div style="display: flex; align-items: center; gap: 24px;">
+  <div style="flex: 0 0 auto; text-align: left;">
+    <img src="./assets/toad.png" alt="Toad" width="100">
+  </div>
+  <div style="flex: 1; text-align: left;">
+    Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). <br>Aplica principios de <strong>Programación Orientada a Objetos</strong>: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
+  </div>
+</div>
 
 ---
 
@@ -134,5 +145,7 @@ MenuPrincipal
 ## 👤 Autor
 
 Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatrimestre 2026**.
+
+**Profe:** Gisele  Milagros Gonzalez
 
 Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/TalentoJava1c26)
