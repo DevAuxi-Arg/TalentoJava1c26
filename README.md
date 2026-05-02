@@ -22,6 +22,8 @@
 
 - ✅ CRUD completo de **Artículos** (crear, listar, consultar, buscar, modificar, eliminar)
 - ✅ CRUD completo de **Categorías**
+- ✅ Subtipado de artículos: **Electrónico** (IVA 10.5%) y **Alimenticio** (IVA 21%)
+- ✅ Cálculo de precio final con IVA aplicado al listar (polimorfismo via `Calculable`)
 - ✅ Búsqueda parcial por nombre (contiene texto)
 - ✅ Generación automática de códigos secuenciales
 - ✅ Validaciones de entrada reutilizables
@@ -42,9 +44,9 @@ src/
     │   └── Calculable.java                # Contrato: calcularPrecioFinal()
     ├── model/
     │   ├── Categoria.java                 # Modelo: código, nombre, descripción
-    │   ├── Articulo.java                  # Modelo: código, nombre, precio, descripción, categoría
-    │   ├── ArticuloAlimenticio.java       # Subtipo de Articulo
-    │   └── ArticuloElectronico.java       # Subtipo de Articulo
+    │   ├── Articulo.java                  # Modelo base: código, nombre, precio, descripción, categoría
+    │   ├── ArticuloAlimenticio.java       # Subtipo: implements Calculable — IVA 21%
+    │   └── ArticuloElectronico.java       # Subtipo: implements Calculable — IVA 10.5%
     ├── repository/
     │   └── Repositorio.java               # Repositorio genérico <T extends Identificable>
     ├── menu/
@@ -73,6 +75,22 @@ Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de
 | `leerSiNo(mensaje)` | Lee confirmación s/n |
 | `limpiarPantalla()` | Limpia la consola |
 | `pausar()` | Espera Enter del usuario |
+
+### `Articulo` y sus subtipos
+`Articulo` es la clase base. Al crear un artículo se elige el tipo:
+
+| Subtipo | IVA | `calcularPrecioFinal()` |
+|---|---|---|
+| `ArticuloElectronico` | 10.5% | `precio * 1.105` |
+| `ArticuloAlimenticio` | 21% | `precio * 1.21` |
+
+Al listar, el polimorfismo invoca automáticamente el `toString()` del subtipo correcto, mostrando el precio final con IVA incluido.
+
+### `Calculable`
+Interfaz con un único método `double calcularPrecioFinal()`. Implementada por `ArticuloElectronico` y `ArticuloAlimenticio` con lógicas distintas.
+
+### `Identificable`
+Interfaz con `int getCodigo()`. Implementada por `Articulo` y `Categoria`. Es el contrato que exige el repositorio genérico.
 
 ### `Repositorio<T extends Identificable>`
 Almacenamiento en memoria con métodos: `agregar`, `listar`, `buscarPorCodigo`, `eliminar`, `estaVacio`.

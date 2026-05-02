@@ -3,6 +3,8 @@ package com.techlab.articulos.menu;
 import java.util.Scanner;
 
 import com.techlab.articulos.model.Articulo;
+import com.techlab.articulos.model.ArticuloAlimenticio;
+import com.techlab.articulos.model.ArticuloElectronico;
 import com.techlab.articulos.model.Categoria;
 import com.techlab.articulos.repository.Repositorio;
 import com.techlab.articulos.utils.Secuencias;
@@ -44,7 +46,7 @@ public class MenuArticulos extends Menu {
         "5. Modificar un artículo",
         "6. Eliminar un artículo",
         "7. Listar categorías disponibles",
-        "0. Salir"
+        "0. Volver al menú principal"
     };
 
     public MenuArticulos(Scanner scanner, Repositorio<Articulo> repoArticulos, Repositorio<Categoria> repoCategorias) {
@@ -124,7 +126,17 @@ public class MenuArticulos extends Menu {
 
         Categoria categoriaElegida = pedirCategoriaExistente();
 
-        Articulo articulo = new Articulo(codigo, nombre, precio, descripcion, categoriaElegida);
+        System.out.println("Tipo de artículo:");
+        System.out.println("  1. Electrónico (IVA 10.5%)");
+        System.out.println("  2. Alimenticio (IVA 21%)");
+        String tipo = leerTexto("Seleccione el tipo (1/2): ");
+
+        Articulo articulo;
+        if (tipo.equals("1")) {
+            articulo = new ArticuloElectronico(codigo, nombre, precio, descripcion, categoriaElegida);
+        } else {
+            articulo = new ArticuloAlimenticio(codigo, nombre, precio, descripcion, categoriaElegida);
+        }
         repoArticulos.agregar(articulo);
 
         System.out.println("Artículo ingresado con código " + codigo + ".");

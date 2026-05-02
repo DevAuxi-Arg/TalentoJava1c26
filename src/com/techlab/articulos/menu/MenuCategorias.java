@@ -39,7 +39,7 @@ public class MenuCategorias extends Menu {
         "3. Consultar por código",
         "4. Consultar por nombre",
         "5. Eliminar una categoría",
-        "0. Salir"
+        "0. Volver al menú principal"
     };
 
     public MenuCategorias(Scanner scanner, Repositorio<Categoria> repoCategorias) {
