@@ -1,28 +1,138 @@
-# Proyecto Java Sistema CRUD Productos Categorías
-# Preentrega Talento Tech 1er cuatr. 2026
-Este es un proyecto Java básico (JDK 17) con la siguiente estructura:
+# 🗂️ Sistema CRUD — Artículos y Categorías
 
-- `src/Main.java`: Clase principal con un ejemplo "Hola, mundo!"
-- `bin/`: Carpeta de salida para los archivos `.class` compilados
-- `.vscode/tasks.json`: Tareas para compilar y ejecutar desde VS Code
-- `.github/copilot-instructions.md`: Checklist y guía de configuración
+**Preentrega · Talento Tech Java · 1° cuatrimestre 2026**
 
-## Compilación
+Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). Aplica principios de **Programación Orientada a Objetos**: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
 
-Puedes compilar el proyecto con la tarea **Compilar Java** o ejecutando:
+---
 
-    javac -d bin src/Main.java
+## ✨ Características
 
-## Ejecución
+- ✅ CRUD completo de **Artículos** (crear, listar, consultar, buscar, modificar, eliminar)
+- ✅ CRUD completo de **Categorías**
+- ✅ Búsqueda parcial por nombre (contiene texto)
+- ✅ Generación automática de códigos secuenciales
+- ✅ Validaciones de entrada reutilizables
+- ✅ Menús interactivos con limpieza de pantalla y pausas
+- ✅ 4 categorías precargadas al inicio
+- ✅ Repositorio genérico en memoria
 
-Puedes ejecutar el proyecto con la tarea **Ejecutar Java** o ejecutando:
+---
 
-    java -cp bin Main
+## 🏗️ Arquitectura
 
-## Requisitos
-- JDK 17
+```
+src/
+├── Main.java                              # Punto de entrada
+└── com/techlab/articulos/
+    ├── interfaces/
+    │   ├── Identificable.java             # Contrato: int getCodigo()
+    │   └── Calculable.java                # Contrato: calcularPrecioFinal()
+    ├── model/
+    │   ├── Categoria.java                 # Modelo: código, nombre, descripción
+    │   ├── Articulo.java                  # Modelo: código, nombre, precio, descripción, categoría
+    │   ├── ArticuloAlimenticio.java       # Subtipo de Articulo
+    │   └── ArticuloElectronico.java       # Subtipo de Articulo
+    ├── repository/
+    │   └── Repositorio.java               # Repositorio genérico <T extends Identificable>
+    ├── menu/
+    │   ├── Menu.java                      # Clase abstracta base para todos los menús
+    │   ├── MenuPrincipal.java             # Menú raíz: rutea a Artículos o Categorías
+    │   ├── MenuArticulos.java             # CRUD de artículos
+    │   └── MenuCategorias.java            # CRUD de categorías
+    └── utils/
+        ├── Secuencias.java                # Generador de códigos auto-incrementales
+        └── Validaciones.java              # Validadores estáticos reutilizables
+```
+
+---
+
+## 🧩 Descripción de clases principales
+
+### `Menu` (abstracta)
+Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de utilidad:
+
+| Método | Descripción |
+|---|---|
+| `imprimirMenu(titulo, opciones[])` | Renderiza el menú con separadores |
+| `leerEntero(mensaje)` | Lee y valida un entero |
+| `leerDouble(mensaje)` | Lee y valida un decimal no negativo |
+| `leerTexto(mensaje)` | Lee un texto no vacío |
+| `leerSiNo(mensaje)` | Lee confirmación s/n |
+| `limpiarPantalla()` | Limpia la consola |
+| `pausar()` | Espera Enter del usuario |
+
+### `Repositorio<T extends Identificable>`
+Almacenamiento en memoria con métodos: `agregar`, `listar`, `buscarPorCodigo`, `eliminar`, `estaVacio`.
+
+### `Secuencias`
+Clase utilitaria final con contadores estáticos. Genera códigos únicos para artículos y categorías automáticamente.
+
+### `Validaciones`
+Clase utilitaria final con validadores estáticos: `textoNoVacio`, `longitudMaxima`, `noNegativo` (para `int` y `double`).
+
+---
+
+## ⚙️ Requisitos
+
+- **JDK 17** o superior
 - No requiere frameworks ni dependencias externas
 
 ---
 
-Para dudas o personalizaciones, consulta el archivo `.github/copilot-instructions.md`.
+## 🔨 Compilación
+
+Desde la raíz del proyecto:
+
+```bash
+javac -encoding UTF-8 -d bin src/Main.java src/com/techlab/articulos/**/*.java src/com/techlab/articulos/menu/*.java src/com/techlab/articulos/model/*.java src/com/techlab/articulos/repository/*.java src/com/techlab/articulos/interfaces/*.java src/com/techlab/articulos/utils/*.java
+```
+
+O usando la tarea de VS Code:
+
+> **Terminal → Ejecutar tarea → Compilar Java**
+
+---
+
+## ▶️ Ejecución
+
+```bash
+java -cp bin Main
+```
+
+O usando la tarea de VS Code:
+
+> **Terminal → Ejecutar tarea → Ejecutar Java**
+
+---
+
+## 🗺️ Flujo de la aplicación
+
+```
+MenuPrincipal
+├── 1. Artículos  →  MenuArticulos
+│       ├── 1. Ingresar artículo
+│       ├── 2. Listar todos
+│       ├── 3. Consultar por código
+│       ├── 4. Buscar por nombre
+│       ├── 5. Modificar
+│       ├── 6. Eliminar
+│       ├── 7. Listar categorías
+│       └── 0. Volver
+├── 2. Categorías →  MenuCategorias
+│       ├── 1. Crear categoría
+│       ├── 2. Listar todas
+│       ├── 3. Consultar por código
+│       ├── 4. Buscar por nombre
+│       ├── 5. Eliminar
+│       └── 0. Volver
+└── 0. Salir
+```
+
+---
+
+## 👤 Autor
+
+Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatrimestre 2026**.
+
+Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/TalentoJava1c26)
