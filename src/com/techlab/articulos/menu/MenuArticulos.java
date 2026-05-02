@@ -118,7 +118,7 @@ public class MenuArticulos extends Menu {
 
         String nombre = leerTexto("Ingrese el nombre del artículo: ");
         String descripcion = leerTexto("Ingrese la descripción del artículo: ");
-        double precio = leerDouble("Ingrese el precio del artículo: ");
+        double precio = leerDouble("Ingrese el precio del artículo (sin IVA): ");
 
         listarCategorias();
 
