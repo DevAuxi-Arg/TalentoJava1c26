@@ -172,6 +172,15 @@ MenuPrincipal
 ```
 
 ---
+
+## 📚 Documentación
+
+| Documento | Descripción |
+|---|---|
+| [Patrón Repository](./docs/patron-repository.md) | Explicación del patrón Repository aplicado en este proyecto |
+| [Interfaces del proyecto](./docs/interfaces.md) | Detalle de las interfaces `Identificable` y `Calculable` |
+
+---
 ## 👤 Autor: G.F. Escobar
 
 Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatrimestre 2026**.

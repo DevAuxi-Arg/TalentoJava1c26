@@ -27,3 +27,10 @@ public class ArticuloAlimenticio extends Articulo implements Calculable {
                 '}';
     }
 }
+public class Repositorio<T extends Identificable> {
+    private ArrayList<T> lista = new ArrayList<>();
+
+    public void agregar(T objeto) { ... }
+    public T buscarPorCodigo(int codigo) { ... }  // usa getCodigo() de Identificable
+    public void eliminar(T objeto) { ... }
+}
