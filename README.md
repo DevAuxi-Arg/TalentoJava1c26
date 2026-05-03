@@ -136,9 +136,9 @@ O usando la tarea de VS Code:
 
 ---
 
-## � Diagrama de clase
+## � UML:
 
-## Diagrama de clase
+## Diagrama de clases
 
 
 <div align="center">
