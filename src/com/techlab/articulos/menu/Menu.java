@@ -103,7 +103,7 @@ public abstract class Menu {
     }
 
     protected void pausar() {
-        System.out.print("\nPresione Enter para continuar...");
+        System.out.print("\nPresione <Enter> para continuar...");
         scanner.nextLine();
     }
 

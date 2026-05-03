@@ -21,7 +21,7 @@ public class MenuPrincipal extends Menu {
 
     @Override
     public void mostrarMenu() {
-        imprimirMenu("Menú Principal", OPCIONES);
+        imprimirMenu("MENÚ PRINCIPAL", OPCIONES);
     }
 
     @Override

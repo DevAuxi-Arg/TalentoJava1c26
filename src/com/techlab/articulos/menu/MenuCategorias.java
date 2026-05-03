@@ -49,7 +49,7 @@ public class MenuCategorias extends Menu {
 
     @Override
     public void mostrarMenu() {
-        imprimirMenu("Menú de Categorías", OPCIONES);
+        imprimirMenu("MENÚ CATEGORÍAS", OPCIONES);
     }
 
     @Override

@@ -57,7 +57,7 @@ public class MenuArticulos extends Menu {
 
     @Override
     public void mostrarMenu() {
-        imprimirMenu("Menú de Artículos", OPCIONES);
+        imprimirMenu("MENÚ ARTÍCULOS", OPCIONES);
     }
 
     @Override

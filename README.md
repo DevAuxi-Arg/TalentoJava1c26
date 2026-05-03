@@ -136,71 +136,15 @@ O usando la tarea de VS Code:
 
 ---
 
-## � Diagrama de clases
+## � Diagrama de clase
 
-```mermaid
-classDiagram
-    direction TB
+## Diagrama de clase
 
-    class Identificable {
-        <<interface>>
-        +getCodigo() int
-    }
 
-    class Calculable {
-        <<interface>>
-        +calcularPrecioFinal() double
-    }
+<div align="center">
+  <img src="./assets/uml.png" alt="Logo" width="800">
+</div>
 
-    class Categoria {
-        -int codigo
-        -String nombre
-        -String descripcion
-        +getCodigo() int
-        +getNombre() String
-        +getDescripcion() String
-    }
-
-    class Articulo {
-        -int codigo
-        -String nombre
-        -double precio
-        -String descripcion
-        -Categoria categoria
-        +getCodigo() int
-        +getNombre() String
-        +getPrecio() double
-        +getCategoria() Categoria
-    }
-
-    class ArticuloElectronico {
-        -double IVA$ = 0.105
-        +calcularPrecioFinal() double
-    }
-
-    class ArticuloAlimenticio {
-        -double IVA$ = 0.21
-        +calcularPrecioFinal() double
-    }
-
-    class Repositorio~T~ {
-        -ArrayList~T~ lista
-        +agregar(T) void
-        +listar() List~T~
-        +buscarPorCodigo(int) T
-        +eliminar(T) void
-        +estaVacio() boolean
-    }
-
-    Identificable <|.. Categoria
-    Identificable <|.. Articulo
-    Calculable <|.. ArticuloElectronico
-    Calculable <|.. ArticuloAlimenticio
-    Articulo <|-- ArticuloElectronico
-    Articulo <|-- ArticuloAlimenticio
-    Articulo --> Categoria : tiene
-    Repositorio~T~ ..> Identificable : T extends
-```
 
 ---
 
@@ -216,20 +160,19 @@ MenuPrincipal
 │       ├── 5. Modificar
 │       ├── 6. Eliminar
 │       ├── 7. Listar categorías
-│       └── 0. Volver
+│       └── 0. Volver al menú principal
 ├── 2. Categorías →  MenuCategorias
 │       ├── 1. Crear categoría
 │       ├── 2. Listar todas
 │       ├── 3. Consultar por código
 │       ├── 4. Buscar por nombre
 │       ├── 5. Eliminar
-│       └── 0. Volver
+│       └── 0. Volver al menú principal
 └── 0. Salir
 ```
 
 ---
-
-## 👤 Autor
+## 👤 Autor: G.F. Escobar
 
 Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatrimestre 2026**.
 

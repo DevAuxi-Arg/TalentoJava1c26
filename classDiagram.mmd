@@ -1,0 +1,61 @@
+classDiagram
+    direction TB
+
+    class Identificable {
+        <<interface>>
+        +getCodigo() int
+    }
+
+    class Calculable {
+        <<interface>>
+        +calcularPrecioFinal() double
+    }
+
+    class Categoria {
+        -int codigo
+        -String nombre
+        -String descripcion
+        +getCodigo() int
+        +getNombre() String
+        +getDescripcion() String
+    }
+
+    class Articulo {
+        -int codigo
+        -String nombre
+        -double precio
+        -String descripcion
+        -Categoria categoria
+        +getCodigo() int
+        +getNombre() String
+        +getPrecio() double
+        +getCategoria() Categoria
+    }
+
+    class ArticuloElectronico {
+        -double IVA$
+        +calcularPrecioFinal() double
+    }
+
+    class ArticuloAlimenticio {
+        -double IVA$
+        +calcularPrecioFinal() double
+    }
+
+    class Repositorio~T extends Identificable~ {
+        -lista ArrayList
+        +agregar(T) void
+        +listar() List
+        +buscarPorCodigo(int) T
+        +eliminar(T) void
+        +estaVacio() boolean
+    }
+
+    Identificable <|.. Categoria
+    Identificable <|.. Articulo
+    Calculable <|.. ArticuloElectronico
+    Calculable <|.. ArticuloAlimenticio
+    Articulo <|-- ArticuloElectronico
+    Articulo <|-- ArticuloAlimenticio
+    Articulo --> Categoria : tiene
+    Repositorio ..> Identificable
