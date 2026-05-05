@@ -128,6 +128,12 @@ public abstract class Menu {
         }
     }
 
+    protected String leerTextoConDefault(String mensaje, String defaultValor) {
+        System.out.print(mensaje);
+        String input = scanner.nextLine().trim();
+        return input.isEmpty() ? defaultValor : input;
+    }
+
     protected boolean leerSiNo(String mensaje) {
         while (true) {
             System.out.print(mensaje + " (s/n): ");

@@ -3,6 +3,7 @@ package com.techlab.articulos.menu;
 import java.util.Scanner;
 
 import com.techlab.articulos.model.Categoria;
+import com.techlab.articulos.model.TipoArticulo;
 import com.techlab.articulos.repository.Repositorio;
 import com.techlab.articulos.utils.Secuencias;
 
@@ -107,7 +108,20 @@ public class MenuCategorias extends Menu {
         String nombre = leerTexto("Ingrese el nombre de la categoría: ");
         String descripcion = leerTexto("Ingrese la descripción de la categoría: ");
 
-        repoCategorias.agregar(new Categoria(codigo, nombre, descripcion));
+        System.out.println("Tipo de artículos de esta categoría:");
+        System.out.println("  1. Electrónico");
+        System.out.println("  2. Alimenticio");
+        System.out.println("  3. Otro");
+        TipoArticulo tipo;
+        while (true) {
+            String opcion = leerTexto("Seleccione el tipo (1/2/3): ");
+            if (opcion.equals("1")) { tipo = TipoArticulo.ELECTRONICO; break; }
+            if (opcion.equals("2")) { tipo = TipoArticulo.ALIMENTICIO; break; }
+            if (opcion.equals("3")) { tipo = TipoArticulo.OTRO; break; }
+            System.out.println("Opción no válida. Intente de nuevo.");
+        }
+
+        repoCategorias.agregar(new Categoria(codigo, nombre, descripcion, tipo));
         System.out.println("Categoría creada con código " + codigo + ".");
         pausar();
     }

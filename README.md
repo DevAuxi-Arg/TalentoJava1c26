@@ -43,10 +43,11 @@ src/
     │   ├── Identificable.java             # Contrato: int getCodigo()
     │   └── Calculable.java                # Contrato: calcularPrecioFinal()
     ├── model/
-    │   ├── Categoria.java                 # Modelo: código, nombre, descripción
+    │   ├── TipoArticulo.java              # Enum: ELECTRONICO, ALIMENTICIO, OTRO
+    │   ├── Categoria.java                 # Modelo: código, nombre, descripción, tipo
     │   ├── Articulo.java                  # Modelo base: código, nombre, precio, descripción, categoría
-    │   ├── ArticuloAlimenticio.java       # Subtipo: implements Calculable — IVA 21%
-    │   └── ArticuloElectronico.java       # Subtipo: implements Calculable — IVA 10.5%
+    │   ├── ArticuloAlimenticio.java       # Subtipo: implements Calculable — IVA 21%, fecha de vencimiento
+    │   └── ArticuloElectronico.java       # Subtipo: implements Calculable — IVA 10.5%, garantía en meses
     ├── repository/
     │   └── Repositorio.java               # Repositorio genérico <T extends Identificable>
     ├── menu/
@@ -74,6 +75,7 @@ Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de
 | `leerTexto(mensaje)` | Lee un texto no vacío |
 | `leerSiNo(mensaje)` | Lee confirmación s/n |
 | `leerFecha(mensaje)` | Lee y valida una fecha en formato `dd/MM/yyyy` |
+| `leerTextoConDefault(mensaje, default)` | Lee texto; si el usuario presiona Enter sin escribir, devuelve el valor por defecto |
 | `limpiarPantalla()` | Limpia la consola |
 | `pausar()` | Espera Enter del usuario |
 
@@ -86,6 +88,12 @@ Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de
 | `ArticuloAlimenticio` | 21% | `fechaVencimiento` (LocalDate) — fecha de vencimiento | `precio * 1.21` |
 
 Al listar, el polimorfismo invoca automáticamente el `toString()` del subtipo correcto, mostrando el precio final con IVA incluido, junto con el campo específico del subtipo.
+
+### `Categoria`
+Modelo con campos: `codigo`, `nombre`, `descripcion` y `tipo` (`TipoArticulo`). El tipo determina qué clase de artículo corresponde a esa categoría, y se usa para pre-seleccionar el tipo al dar de alta un artículo.
+
+### `TipoArticulo`
+Enum con tres valores: `ELECTRONICO`, `ALIMENTICIO`, `OTRO`. Pertenece a `Categoria` y permite que el alta de artículos sugiera automáticamente el subtipo correcto según la categoría elegida.
 
 ### `Calculable`
 Interfaz con un único método `double calcularPrecioFinal()`. Implementada por `ArticuloElectronico` y `ArticuloAlimenticio` con lógicas distintas.

@@ -7,6 +7,7 @@ import com.techlab.articulos.model.Articulo;
 import com.techlab.articulos.model.ArticuloAlimenticio;
 import com.techlab.articulos.model.ArticuloElectronico;
 import com.techlab.articulos.model.Categoria;
+import com.techlab.articulos.model.TipoArticulo;
 import com.techlab.articulos.repository.Repositorio;
 import com.techlab.articulos.utils.Secuencias;
 
@@ -99,10 +100,10 @@ public class MenuArticulos extends Menu {
      * - el usuario elige una categoría existente
      */
     public static void precargarCategorias(Repositorio<Categoria> repoCategorias) {
-        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Electrónica", "Productos tecnológicos y electrónicos"));
-        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Periféricos", "Accesorios para computadora"));
-        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Alimentos", "Productos alimenticios"));
-        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Limpieza", "Artículos de limpieza del hogar"));
+        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Electrónica", "Productos tecnológicos y electrónicos", TipoArticulo.ELECTRONICO));
+        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Periféricos", "Accesorios para computadora", TipoArticulo.ELECTRONICO));
+        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Alimentos", "Productos alimenticios", TipoArticulo.ALIMENTICIO));
+        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Limpieza", "Artículos de limpieza del hogar", TipoArticulo.OTRO));
     }
 
     /*
@@ -130,7 +131,13 @@ public class MenuArticulos extends Menu {
         System.out.println("Tipo de artículo:");
         System.out.println("  1. Electrónico (IVA 10.5%)");
         System.out.println("  2. Alimenticio (IVA 21%)");
-        String tipo = leerTexto("Seleccione el tipo (1/2): ");
+        String tipoSugerido = sugerirTipo(categoriaElegida);
+        String tipo;
+        if (tipoSugerido != null) {
+            tipo = leerTextoConDefault("Seleccione el tipo (1/2) [" + tipoSugerido + "]: ", tipoSugerido);
+        } else {
+            tipo = leerTexto("Seleccione el tipo (1/2): ");
+        }
 
         Articulo articulo;
         if (tipo.equals("1")) {
@@ -320,6 +327,12 @@ public class MenuArticulos extends Menu {
      * 2) busca si existe
      * 3) si no existe, vuelve a pedirlo
      */
+    private String sugerirTipo(Categoria categoria) {
+        if (categoria.getTipo() == TipoArticulo.ELECTRONICO) return "1";
+        if (categoria.getTipo() == TipoArticulo.ALIMENTICIO) return "2";
+        return null;
+    }
+
     private Categoria pedirCategoriaExistente() {
 
         while (true) {

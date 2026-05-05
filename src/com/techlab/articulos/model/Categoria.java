@@ -2,34 +2,18 @@ package com.techlab.articulos.model;
 
 import com.techlab.articulos.interfaces.Identificable;
 
-/*
- * CLASE CATEGORIA
- * --------------------------------------------------
- * Esta clase representa una categoría del sistema.
- *
- * En esta etapa todavía no tiene CRUD propio.
- * Solo se usa para:
- * - crear categorías precargadas
- * - asignárselas a los artículos
- *
- * Más adelante esta clase tendrá mucha más importancia
- * cuando hagamos el CRUD de categorías.
- */
 public class Categoria implements Identificable {
 
     private int codigo;
     private String nombre;
     private String descripcion;
+    private TipoArticulo tipo;
 
-    /*
-     * Constructor completo.
-     *
-     * Permite crear categorías listas para usar.
-     */
-    public Categoria(int codigo, String nombre, String descripcion) {
+    public Categoria(int codigo, String nombre, String descripcion, TipoArticulo tipo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.tipo = tipo;
     }
 
     public int getCodigo() {
@@ -56,17 +40,20 @@ public class Categoria implements Identificable {
         this.descripcion = descripcion;
     }
 
-    /*
-     * toString
-     * --------------------------------------------------
-     * Mostramos la categoría de forma clara para que el usuario
-     * pueda elegirla por código.
-     */
+    public TipoArticulo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoArticulo tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "Categoría {" +
                 "código=" + codigo +
                 ", nombre='" + nombre + '\'' +
+                ", tipo=" + tipo +
                 ", descripción='" + descripcion + '\'' +
                 '}';
     }
