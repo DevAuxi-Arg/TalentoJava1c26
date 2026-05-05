@@ -1,5 +1,8 @@
 package com.techlab.articulos.menu;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import com.techlab.articulos.utils.Validaciones;
 
@@ -132,6 +135,18 @@ public abstract class Menu {
             if (respuesta.equals("s")) return true;
             if (respuesta.equals("n")) return false;
             System.out.println("Error: ingrese 's' para sí o 'n' para no.");
+        }
+    }
+
+    protected LocalDate leerFecha(String mensaje) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        while (true) {
+            try {
+                System.out.print(mensaje);
+                return LocalDate.parse(scanner.nextLine().trim(), formatter);
+            } catch (DateTimeParseException e) {
+                System.out.println("Error: ingrese la fecha en formato dd/MM/yyyy.");
+            }
         }
     }
 }

@@ -22,7 +22,7 @@
 
 - ✅ CRUD completo de **Artículos** (crear, listar, consultar, buscar, modificar, eliminar)
 - ✅ CRUD completo de **Categorías**
-- ✅ Subtipado de artículos: **Electrónico** (IVA 10.5%) y **Alimenticio** (IVA 21%)
+- ✅ Subtipado de artículos: **Electrónico** (IVA 10.5%, garantía en meses) y **Alimenticio** (IVA 21%, fecha de vencimiento)
 - ✅ Cálculo de precio final con IVA aplicado al listar (polimorfismo via `Calculable`)
 - ✅ Búsqueda parcial por nombre (contiene texto)
 - ✅ Generación automática de códigos secuenciales
@@ -73,18 +73,19 @@ Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de
 | `leerDouble(mensaje)` | Lee y valida un decimal no negativo |
 | `leerTexto(mensaje)` | Lee un texto no vacío |
 | `leerSiNo(mensaje)` | Lee confirmación s/n |
+| `leerFecha(mensaje)` | Lee y valida una fecha en formato `dd/MM/yyyy` |
 | `limpiarPantalla()` | Limpia la consola |
 | `pausar()` | Espera Enter del usuario |
 
 ### `Articulo` y sus subtipos
 `Articulo` es la clase base. Al crear un artículo se elige el tipo:
 
-| Subtipo | IVA | `calcularPrecioFinal()` |
-|---|---|---|
-| `ArticuloElectronico` | 10.5% | `precio * 1.105` |
-| `ArticuloAlimenticio` | 21% | `precio * 1.21` |
+| Subtipo | IVA | Campo adicional | `calcularPrecioFinal()` |
+|---|---|---|---|
+| `ArticuloElectronico` | 10.5% | `garantiaMeses` (int) — meses de garantía | `precio * 1.105` |
+| `ArticuloAlimenticio` | 21% | `fechaVencimiento` (LocalDate) — fecha de vencimiento | `precio * 1.21` |
 
-Al listar, el polimorfismo invoca automáticamente el `toString()` del subtipo correcto, mostrando el precio final con IVA incluido.
+Al listar, el polimorfismo invoca automáticamente el `toString()` del subtipo correcto, mostrando el precio final con IVA incluido, junto con el campo específico del subtipo.
 
 ### `Calculable`
 Interfaz con un único método `double calcularPrecioFinal()`. Implementada por `ArticuloElectronico` y `ArticuloAlimenticio` con lógicas distintas.

@@ -1,5 +1,6 @@
 package com.techlab.articulos.menu;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import com.techlab.articulos.model.Articulo;
@@ -133,9 +134,11 @@ public class MenuArticulos extends Menu {
 
         Articulo articulo;
         if (tipo.equals("1")) {
-            articulo = new ArticuloElectronico(codigo, nombre, precio, descripcion, categoriaElegida);
+            int garantia = leerEntero("Ingrese los meses de garantía: ");
+            articulo = new ArticuloElectronico(codigo, nombre, precio, descripcion, categoriaElegida, garantia);
         } else {
-            articulo = new ArticuloAlimenticio(codigo, nombre, precio, descripcion, categoriaElegida);
+            LocalDate fechaVencimiento = leerFecha("Ingrese la fecha de vencimiento (dd/MM/yyyy): ");
+            articulo = new ArticuloAlimenticio(codigo, nombre, precio, descripcion, categoriaElegida, fechaVencimiento);
         }
         repoArticulos.agregar(articulo);
 
