@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.techlab.articulos.model.Articulo;
 import com.techlab.articulos.model.ArticuloAlimenticio;
 import com.techlab.articulos.model.ArticuloElectronico;
+import com.techlab.articulos.model.ArticuloGeneral;
 import com.techlab.articulos.model.Categoria;
 import com.techlab.articulos.model.TipoArticulo;
 import com.techlab.articulos.repository.Repositorio;
@@ -131,21 +132,24 @@ public class MenuArticulos extends Menu {
         System.out.println("Tipo de artículo:");
         System.out.println("  1. Electrónico (IVA 10.5%)");
         System.out.println("  2. Alimenticio (IVA 21%)");
+        System.out.println("  3. General (IVA 21%, sin campos adicionales)");
         String tipoSugerido = sugerirTipo(categoriaElegida);
         String tipo;
         if (tipoSugerido != null) {
-            tipo = leerTextoConDefault("Seleccione el tipo (1/2) [" + tipoSugerido + "]: ", tipoSugerido);
+            tipo = leerTextoConDefault("Seleccione el tipo (1/2/3) [" + tipoSugerido + "]: ", tipoSugerido);
         } else {
-            tipo = leerTexto("Seleccione el tipo (1/2): ");
+            tipo = leerTextoConDefault("Seleccione el tipo (1/2/3) [3]: ", "3");
         }
 
         Articulo articulo;
         if (tipo.equals("1")) {
             int garantia = leerEntero("Ingrese los meses de garantía: ");
             articulo = new ArticuloElectronico(codigo, nombre, precio, descripcion, categoriaElegida, garantia);
-        } else {
+        } else if (tipo.equals("2")) {
             LocalDate fechaVencimiento = leerFecha("Ingrese la fecha de vencimiento (dd/MM/yyyy): ");
             articulo = new ArticuloAlimenticio(codigo, nombre, precio, descripcion, categoriaElegida, fechaVencimiento);
+        } else {
+            articulo = new ArticuloGeneral(codigo, nombre, precio, descripcion, categoriaElegida);
         }
         repoArticulos.agregar(articulo);
 
@@ -330,7 +334,7 @@ public class MenuArticulos extends Menu {
     private String sugerirTipo(Categoria categoria) {
         if (categoria.getTipo() == TipoArticulo.ELECTRONICO) return "1";
         if (categoria.getTipo() == TipoArticulo.ALIMENTICIO) return "2";
-        return null;
+        return "3";
     }
 
     private Categoria pedirCategoriaExistente() {
