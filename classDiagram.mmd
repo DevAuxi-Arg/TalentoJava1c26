@@ -44,6 +44,11 @@ classDiagram
         +setCategoria(Categoria) void
     }
 
+    class ArticuloGeneral {
+        -double IVA
+        +calcularPrecioFinal() double
+    }
+
     class ArticuloElectronico {
         -double IVA
         -int garantiaMeses
@@ -71,8 +76,10 @@ classDiagram
     Identificable <|.. Articulo
     Calculable <|.. ArticuloElectronico
     Calculable <|.. ArticuloAlimenticio
+    Calculable <|.. ArticuloGeneral
     Articulo <|-- ArticuloElectronico
     Articulo <|-- ArticuloAlimenticio
+    Articulo <|-- ArticuloGeneral
     Articulo --> Categoria : tiene
     Categoria --> TipoArticulo : tipo
     Repositorio ..> Identificable

@@ -55,7 +55,8 @@ src/
     │   ├── Categoria.java                 # Modelo: código, nombre, descripción, tipo
     │   ├── Articulo.java                  # Modelo base: código, nombre, precio, descripción, categoría
     │   ├── ArticuloAlimenticio.java       # Subtipo: implements Calculable — IVA 21%, fecha de vencimiento
-    │   └── ArticuloElectronico.java       # Subtipo: implements Calculable — IVA 10.5%, garantía en meses
+    │   ├── ArticuloElectronico.java       # Subtipo: implements Calculable — IVA 10.5%, garantía en meses
+    │   └── ArticuloGeneral.java           # Subtipo: implements Calculable — IVA 21%, sin campos adicionales
     ├── repository/
     │   └── Repositorio.java               # Repositorio genérico <T extends Identificable>
     ├── menu/
@@ -94,6 +95,7 @@ Base de todos los menús. Encapsula el `Scanner` compartido y expone métodos de
 |---|---|---|---|
 | `ArticuloElectronico` | 10.5% | `garantiaMeses` (int) — meses de garantía | `precio * 1.105` |
 | `ArticuloAlimenticio` | 21% | `fechaVencimiento` (LocalDate) — fecha de vencimiento | `precio * 1.21` |
+| `ArticuloGeneral` | 21% | — ninguno | `precio * 1.21` |
 
 Al listar, el polimorfismo invoca automáticamente el `toString()` del subtipo correcto, mostrando el precio final con IVA incluido, junto con el campo específico del subtipo.
 
@@ -104,7 +106,7 @@ Modelo con campos: `codigo`, `nombre`, `descripcion` y `tipo` (`TipoArticulo`). 
 Enum con tres valores: `ELECTRONICO`, `ALIMENTICIO`, `OTRO`. Pertenece a `Categoria` y permite que el alta de artículos sugiera automáticamente el subtipo correcto según la categoría elegida.
 
 ### `Calculable`
-Interfaz con un único método `double calcularPrecioFinal()`. Implementada por `ArticuloElectronico` y `ArticuloAlimenticio` con lógicas distintas.
+Interfaz con un único método `double calcularPrecioFinal()`. Implementada por `ArticuloElectronico`, `ArticuloAlimenticio` y `ArticuloGeneral` con lógicas propias.
 
 ### `Identificable`
 Interfaz con `int getCodigo()`. Implementada por `Articulo` y `Categoria`. Es el contrato que exige el repositorio genérico.
