@@ -11,13 +11,22 @@ classDiagram
         +calcularPrecioFinal() double
     }
 
+    class TipoArticulo {
+        <<enumeration>>
+        ELECTRONICO
+        ALIMENTICIO
+        OTRO
+    }
+
     class Categoria {
         -int codigo
         -String nombre
         -String descripcion
+        -TipoArticulo tipo
         +getCodigo() int
         +getNombre() String
         +getDescripcion() String
+        +getTipo() TipoArticulo
     }
 
     class Articulo {
@@ -30,15 +39,22 @@ classDiagram
         +getNombre() String
         +getPrecio() double
         +getCategoria() Categoria
+        +setNombre(String) void
+        +setPrecio(double) void
+        +setCategoria(Categoria) void
     }
 
     class ArticuloElectronico {
-        -double IVA$
+        -double IVA
+        -int garantiaMeses
+        +getGarantiaMeses() int
         +calcularPrecioFinal() double
     }
 
     class ArticuloAlimenticio {
-        -double IVA$
+        -double IVA
+        -LocalDate fechaVencimiento
+        +getFechaVencimiento() LocalDate
         +calcularPrecioFinal() double
     }
 
@@ -58,4 +74,5 @@ classDiagram
     Articulo <|-- ArticuloElectronico
     Articulo <|-- ArticuloAlimenticio
     Articulo --> Categoria : tiene
+    Categoria --> TipoArticulo : tipo
     Repositorio ..> Identificable
