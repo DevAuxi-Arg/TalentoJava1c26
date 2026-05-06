@@ -2,7 +2,15 @@
   <img src="./assets/logo.png" alt="Logo" width="200">
 
   # 🗂️ Sistema CRUD — Artículos y Categorías
-  
+
+  <!-- Badges -->
+  <p>
+    <img src="https://img.shields.io/badge/☕_Java-17-F89820?style=for-the-badge&logo=openjdk&logoColor=white&labelColor=1A1A2E" alt="Java 17"/>
+    <img src="https://img.shields.io/badge/🏗️_POO-Herencia_•_Interfaces-4CAF50?style=for-the-badge&logoColor=white&labelColor=1B3A2D" alt="POO"/>
+    <img src="https://img.shields.io/badge/📦_Patrón-Repository-6A5ACD?style=for-the-badge&logoColor=white&labelColor=1A1030" alt="Repository Pattern"/>
+    <img src="https://img.shields.io/badge/🚫_Sin_Frameworks-Java_Puro-E53935?style=for-the-badge&logoColor=white&labelColor=2D1010" alt="Sin frameworks"/>
+  </p>
+
 </div>
 
 
