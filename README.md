@@ -167,7 +167,7 @@ O usando la tarea de VS Code:
 
 ---
 
-## �🗺️ Flujo de la aplicación
+## �🗺️ Flujo de Navegación de la aplicación
 
 ```
 MenuPrincipal
@@ -189,19 +189,41 @@ MenuPrincipal
 │       └── 0. Volver al menú principal
 └── 0. Salir
 ```
+<div align="center">
+  <img src="./assets/navegacion.png" alt="Diagrama de navegacion" width="800">
+</div>
+
 ---
 
-## 📊 Diagrama de control Alta de Producto: menuArticulos.ingresarArticulo()
+## 📊 Diagrama de Actividad con Swimlanes
+- muestra flujo lógico del proceso y decisiones.
 
 <div align="center">
-  <img src="./assets/altaProd.png" alt="Diagrama de control" width="800">
+  <img src="./assets/actividad.png" alt="Diagrama de control" width="800">
+</div>
+
+---
+
+## 📊 Diagrama de Diagrama de Secuencia UML para el caso de uso: Alta de producto
+- muestra interacción temporal entre objetos/clases (mensajes en orden cronológico)
+
+<div align="center">
+  <img src="./assets/secuencia.png" alt="Diagrama de control" width="800">
+</div>
+
+---
+
+## 📊 Diagrama de control Alta de Producto: MenuArticulos.ingresarArticulo()
+
+<div align="center">
+  <img src="./assets/altaProd.png" alt="Diagrama de control" width="600">
 </div>
 
 
 ### 📌 El flujo clave es:
 
-> 1. El código del producto se genera automáticamente; no lo ingresa el usuario.
-> 2. La categoría se selecciona entre las categorías disponibles del sistema y se valida que exista.
+> 1. El código del producto se genera automáticamente; no lo ingresa el usuario. (MenuArticulos.java)
+> 2. La categoría se selecciona entre las categorías disponibles del sistema y se valida que exista. 
 > 3. Según la categoría, se sugiere un tipo de artículo (Electrónico, Alimenticio o General), pero el usuario puede cambiar esa sugerencia.
 > 4. El tipo elegido define los campos adicionales del alta:
 >    - Electrónico: garantía en meses.
