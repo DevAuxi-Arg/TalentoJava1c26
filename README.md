@@ -189,6 +189,20 @@ MenuPrincipal
 │       └── 0. Volver al menú principal
 └── 0. Salir
 ```
+---
+
+## 📊 Diagrama de control Alta de Producto
+
+<div align="center">
+  <img src="./assets/altaProd.png" alt="Diagrama de control" width="800">
+</div>
+
+El flujo clave es:
+
+> 1. El código se genera automáticamente (no lo ingresa el usuario)
+> 2. La categoría se elige de una lista precargada
+> 3. El tipo de artículo determina los campos adicionales: garantía (electrónico), fecha de vencimiento (alimenticio) ó sin campos especiales (general).
+> 4. Cada tipo calcula su propio IVA al instanciarse
 
 ---
 <a id="doc"></a>

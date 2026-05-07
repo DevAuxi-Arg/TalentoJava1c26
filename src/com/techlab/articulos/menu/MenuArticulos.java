@@ -105,6 +105,8 @@ public class MenuArticulos extends Menu {
         repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Periféricos", "Accesorios para computadora", TipoArticulo.ELECTRONICO));
         repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Alimentos", "Productos alimenticios", TipoArticulo.ALIMENTICIO));
         repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Limpieza", "Artículos de limpieza del hogar", TipoArticulo.OTRO));
+        repoCategorias.agregar(new Categoria(Secuencias.generarCodigoCategoria(), "Electrodomésticos", "Aparatos eléctricos para el hogar", TipoArticulo.OTRO));
+
     }
 
     /*
