@@ -214,7 +214,7 @@ El flujo clave es:
 | [Interfaces del proyecto](./docs/interfaces.md) | Detalle de las interfaces `Identificable` y `Calculable` |
 
 ---
-## 👤 Autor: G.F. Escobar
+## 👤 Autor: G.Escobar
 
 Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatrimestre 2026**.
 
