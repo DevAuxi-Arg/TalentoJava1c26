@@ -16,7 +16,7 @@
 
 <table>
   <tr>
-    <td valign="middle"><img src="./assets/toad.png" alt="Toad" width="100"></td>
+    <td valign="middle"><img src="./assets/toad.png" alt="Toad" style="width: 100%; max-width: 50px;"></td>
     <td valign="middle">
       Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). <br>
       Aplica principios de <strong>Programación Orientada a Objetos</strong>: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
