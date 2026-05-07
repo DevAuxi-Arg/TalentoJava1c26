@@ -155,7 +155,7 @@ O usando la tarea de VS Code:
 
 ---
 
-## � UML:
+## �🗺️ UML:
 
 ## Diagrama de clases
 
@@ -167,7 +167,7 @@ O usando la tarea de VS Code:
 
 ---
 
-## �🗺️ Flujo de Navegación de la aplicación
+## �🧭 Flujo de Navegación de la aplicación
 
 ```
 MenuPrincipal
@@ -195,7 +195,7 @@ MenuPrincipal
 
 ---
 
-## 📊 Diagrama de Actividad con Swimlanes
+## 🛤️ Diagrama de Actividad con Swimlanes
 - muestra flujo lógico del proceso y decisiones.
 
 <div align="center">
@@ -204,7 +204,7 @@ MenuPrincipal
 
 ---
 
-## 📊 Diagrama de Diagrama de Secuencia UML para el caso de uso: Alta de producto
+## 📡 Diagrama de Diagrama de Secuencia UML para el caso de uso: Alta de producto
 - muestra interacción temporal entre objetos/clases (mensajes en orden cronológico)
 
 <div align="center">
@@ -213,7 +213,7 @@ MenuPrincipal
 
 ---
 
-## 📊 Diagrama de control Alta de Producto: MenuArticulos.ingresarArticulo()
+## 🔄 Diagrama de control Alta de Producto: MenuArticulos.ingresarArticulo()
 
 <div align="center">
   <img src="./assets/altaProd.png" alt="Diagrama de control" width="600">
