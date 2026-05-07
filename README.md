@@ -161,7 +161,7 @@ O usando la tarea de VS Code:
 
 
 <div align="center">
-  <img src="./assets/clases.png" alt="Logo" width="800">
+  <img src="./assets/clases.png" alt="Logo" width="600">
 </div>
 
 
