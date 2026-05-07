@@ -16,7 +16,7 @@
 
 <table>
   <tr>
-    <td valign="middle"><img src="./assets/toad.png" alt="Toad" style="max-width: 40px; min-width: 35px"></td>
+    <td valign="middle"><img src="./assets/toad.png" alt="Toad" width="100"></td>
     <td valign="middle">
       Sistema de gestión de artículos y categorías desarrollado en Java puro (sin frameworks). <br>
       Aplica principios de <strong>Programación Orientada a Objetos</strong>: herencia, abstracción, interfaces genéricas y el patrón Repositorio.
@@ -201,7 +201,7 @@ El flujo clave es:
 
 > 1. El código se genera automáticamente (no lo ingresa el usuario)
 > 2. La categoría se elige de una lista precargada
-> 3. El tipo de artículo determina los campos adicionales: garantía (electrónico), fecha de vencimiento (alimenticio) ó sin campos especiales (general).
+> 3. El tipo de artículo determina los campos adicionales: garantía (electrónico), fecha de vencimiento (alimenticio) ó sin campos especiales (General).
 > 4. Cada tipo calcula su propio IVA al instanciarse
 
 ---
