@@ -191,18 +191,38 @@ MenuPrincipal
 ```
 ---
 
-## 📊 Diagrama de control Alta de Producto
+## 📊 Diagrama de control Alta de Producto: menuArticulos.ingresarArticulo()
 
 <div align="center">
   <img src="./assets/altaProd.png" alt="Diagrama de control" width="800">
 </div>
 
-El flujo clave es:
 
-> 1. El código se genera automáticamente (no lo ingresa el usuario)
-> 2. La categoría se elige de una lista precargada
-> 3. El tipo de artículo determina los campos adicionales: garantía (electrónico), fecha de vencimiento (alimenticio) ó sin campos especiales (General).
-> 4. Cada tipo calcula su propio IVA al instanciarse
+### 📌 El flujo clave es:
+
+> 1. El código del producto se genera automáticamente; no lo ingresa el usuario.
+> 2. La categoría se selecciona entre las categorías disponibles del sistema y se valida que exista.
+> 3. Según la categoría, se sugiere un tipo de artículo (Electrónico, Alimenticio o General), pero el usuario puede cambiar esa sugerencia.
+> 4. El tipo elegido define los campos adicionales del alta:
+>    - Electrónico: garantía en meses.
+>    - Alimenticio: fecha de vencimiento.
+>    - General: sin campos extra.
+> 5. Cada subtipo calcula su precio final aplicando su IVA cuando se invoca el cálculo:
+>    - Electrónico: 10.5%.
+>    - Alimenticio: 21%.
+>    - General: 21%.
+
+### 🧩 Clases involucradas en el alta
+
+- `MenuArticulos`: orquesta el flujo de ingreso y validaciones.
+- `Secuencias`: genera el código automático del artículo.
+- `Categoria`: representa la categoría elegida por el usuario.
+- `TipoArticulo`: enum que permite sugerir el tipo según la categoría.
+- `Articulo`: clase base del producto.
+- `ArticuloElectronico`: subtipo con garantía e IVA 10.5%.
+- `ArticuloAlimenticio`: subtipo con fecha de vencimiento e IVA 21%.
+- `ArticuloGeneral`: subtipo sin campos extra e IVA 21%.
+- `Calculable`: contrato común para calcular el precio final.
 
 ---
 <a id="doc"></a>
