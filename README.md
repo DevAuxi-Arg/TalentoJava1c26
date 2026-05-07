@@ -222,7 +222,7 @@ MenuPrincipal
 - `ArticuloElectronico`: subtipo con garantía e IVA 10.5%.
 - `ArticuloAlimenticio`: subtipo con fecha de vencimiento e IVA 21%.
 - `ArticuloGeneral`: subtipo sin campos extra e IVA 21%.
-- `Calculable`: contrato común para calcular el precio final.
+- `Calculable`: contrato común para calcular el precio final (no se guarda, siempre se calcula en tiempo real).
 
 ---
 <a id="doc"></a>
