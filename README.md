@@ -294,6 +294,6 @@ Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/Talent
 
 <br>
 
-> *"Cada clase cuenta una historia de diseño, escalabilidad y aprendizaje."*
+*"Cada clase cuenta una historia de diseño, escalabilidad y aprendizaje."*
 
 <br>
