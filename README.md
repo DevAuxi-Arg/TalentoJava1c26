@@ -272,7 +272,7 @@ Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/Talent
 <div align="center">
 
 
-### 👨‍🚀 **Willy ESCOBAR**
+### 👨‍🚀 **WILLY ESCOBAR**
 *Software Engineer | UI/UX Designer | STEAM Creator blending Software Engineering and Visual Arts*
 
 <br>
