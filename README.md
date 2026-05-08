@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./assets/logo.png" alt="Logo" width="200">
 
-  # 🗂️ Sistema CRUD — Artículos y Categorías
+  # 🗂️ **Sistema CRUD — Artículos y Categorías**
 
   <!-- Badges -->
   <p>
@@ -264,3 +264,23 @@ Proyecto educativo desarrollado para **Talento Tech — Curso Java · 1° cuatri
 **Profe:** Gisele  Milagros Gonzalez
 
 Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/TalentoJava1c26)
+
+---
+
+## 🧑‍💻 **SOBRE EL DESARROLLADOR**
+
+<div align="center">
+
+
+### 👨‍🚀 **Willy ESCOBAR**
+*Software Engineer | UI/UX Designer | STEAM Creator blending Software Engineering and Visual Arts*
+
+<br>
+
+<img src="https://github.com/WillyEsco/rodados/blob/main/src/assets/willyDev.gif?raw=true" alt="Guillermo Escobar" width="150" style="border-radius: 50%; border: 4px solid #4CAF50; box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);"/>
+
+<br>
+
+> *"Cada clase cuenta una historia de diseño, escalabilidad y aprendizaje."*
+
+<br>
