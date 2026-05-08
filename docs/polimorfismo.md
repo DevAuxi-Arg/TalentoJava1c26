@@ -148,6 +148,13 @@ ArticuloGeneral {código=3, nombre='Limpiador', precio=30.0, precioFinal=36.30 (
 | **Herencia** | `ArticuloElectronico`, `ArticuloAlimenticio` y `ArticuloGeneral` heredan de `Articulo`. |
 | **Sobrescritura** | Cada subtipo redefine `toString()` para mostrar su propia estructura. |
 | **Interfaz Calculable** | Contrato común que garantiza que todo `Articulo` puede calcular su precio final. |
+---
+
+## 🔄 Infografía sobre Polimorfismo en ArrayList de Java 
+
+<div align="center">
+  <img src="../assets/listar.png" alt="Diagrama listar()" width="800">
+</div>
 
 ---
 

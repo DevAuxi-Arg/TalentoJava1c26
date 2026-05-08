@@ -110,7 +110,13 @@ Articulo a = repo.buscarPorCodigo(1);
 El repositorio trabaja con el tipo base `Articulo`, pero cada objeto recuerda su tipo real. Cuando se llama `toString()` o `calcularPrecioFinal()`, Java ejecuta la versión del subtipo concreto — eso es **dispatch dinámico**.
 
 ---
+## 🔄 Infografía sobre el patrón Repositoryen del proyecto 
 
+<div align="center">
+  <img src="../assets/repository.png" alt="Diagrama listar()" width="800">
+</div>
+
+---
 ## Resumen del flujo
 
 1. `Identificable` → contrato mínimo para el repositorio (`getCodigo()`)

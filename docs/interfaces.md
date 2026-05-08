@@ -73,8 +73,15 @@ Mismo método, distinta lógica → eso es **polimorfismo de comportamiento**.
 | **Se usa en** | `Repositorio<T extends Identificable>` | `toString()` y lógica de precios |
 
 ---
+## 🔄 Infografía sobre las interfaces del proyecto  
 
+<div align="center">
+  <img src="../assets/interfaces.png" alt="Diagrama interfaces" width="800">
+</div>
+
+---
 ## Diagrama conceptual
+
 
 ```
 Identificable              Calculable
