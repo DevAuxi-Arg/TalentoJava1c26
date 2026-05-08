@@ -267,6 +267,19 @@ Repositorio: [DevAuxi-Arg/TalentoJava1c26](https://github.com/DevAuxi-Arg/Talent
 
 ---
 
+## 📚 Manuales y documentación desarrollados por Gise
+
+| Tipo | Archivo | Descripción |
+|---|---|---|
+| ☕ | [Introducción a Java](./docs/manuales/Manual_Introductorio_de_Java.docx) | Conceptos básicos e introducción al lenguaje Java |
+| ⚙️ | [Instalación de Java](./docs/manuales/Manual_de_Instalación_y_Primer_Programa_en_Java_con_Visual_Studio_Code.pdf) | Configuración del entorno y primeros pasos con Visual Studio Code |
+| 💻 | [Primer proyecto en Java](./docs/manuales/Manual_de_Instalación_y_Primer_Programa_en_Java_con_Visual_Studio_Code.pdf) | Desarrollo de una primera aplicación en Java utilizando VSC |
+| 🗂️ | [CRUDs del proyecto](./docs/manuales/Manual_Java_Poo_CRUDS_EXPLICADOS_EN_DETALLE.pdf) | Explicación detallada de operaciones CRUD aplicadas en Java POO |
+| 🏗️ | [Manual técnico y arquitectura](./docs/manuales/Diagrama_Y_Manual_Arquitectura_Preentrega_Java_260508.pdf) | Diagramas, estructura y arquitectura general del sistema |
+
+
+---
+
 ## 🧑‍💻 **SOBRE EL DESARROLLADOR**
 
 <div align="center">
