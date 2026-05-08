@@ -254,6 +254,7 @@ MenuPrincipal
 |---|---|
 | [Patrón Repository](./docs/patron-repository.md) | Explicación del patrón Repository aplicado en este proyecto |
 | [Interfaces del proyecto](./docs/interfaces.md) | Detalle de las interfaces `Identificable` y `Calculable` |
+| [Polimorfismo en el listado](./docs/polimorfismo.md) | Cómo funciona el polimorfismo con los distintos tipos de artículos (ArticuloElectronico, ArticuloAlimenticio, ArticuloGeneral) en la opción Listar artículos |
 
 ---
 ## 👤 Autor: G.Escobar
