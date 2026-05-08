@@ -82,14 +82,11 @@ Mismo método, distinta lógica → eso es **polimorfismo de comportamiento**.
 ---
 ## Diagrama conceptual
 
+<div align="center">
+  <img src="../assets/interfaces2.png" alt="Diagrama interfaces" width="800">
+</div>
 
-```
-Identificable              Calculable
-    getCodigo()                calcularPrecioFinal()
-         ↑                           ↑
-   Articulo                ArticuloAlimenticio (IVA 21%)
-   Categoria               ArticuloElectronico (IVA 10.5%)
-```
+
 
 `Articulo` no implementa `Calculable` porque la clase base no sabe qué IVA aplicar — esa decisión se delega a cada subtipo. Es un diseño intencional: forzar que cada tipo concreto defina su propia regla de precio.
 
