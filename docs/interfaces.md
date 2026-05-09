@@ -81,7 +81,7 @@ Mismo método, distinta lógica → eso es **polimorfismo de comportamiento**.
 ## Diagramas de Interfaces y clases que las implementan
 
 <div align="center">
-  <img src="../assets/interfaces y clases diagram.png" alt="Diagrama interfaces" width="800">
+  <img src="../assets/interfaces y clases diagrama.png" alt="Diagrama interfaces" width="800">
 </div>
 
 `Articulo` no implementa `Calculable` porque la clase base no sabe qué IVA aplicar — esa decisión se delega a cada subtipo. Es un diseño intencional: forzar que cada tipo concreto defina su propia regla de precio.
