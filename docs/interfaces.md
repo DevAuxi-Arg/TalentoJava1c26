@@ -1,3 +1,7 @@
+```
+
+```
+
 # Interfaces del proyecto
 
 ## `Identificable`
@@ -13,12 +17,12 @@ public interface Identificable {
 
 ### ¿Quién la implementa?
 
-| Clase | ¿Cómo? |
-|---|---|
-| `Categoria` | directamente: `implements Identificable` |
-| `Articulo` | directamente: `implements Identificable` |
-| `ArticuloAlimenticio` | **por herencia** de `Articulo` |
-| `ArticuloElectronico` | **por herencia** de `Articulo` |
+| Clase                   | ¿Cómo?                                  |
+| ----------------------- | ----------------------------------------- |
+| `Categoria`           | directamente:`implements Identificable` |
+| `Articulo`            | directamente:`implements Identificable` |
+| `ArticuloAlimenticio` | **por herencia** de `Articulo`    |
+| `ArticuloElectronico` | **por herencia** de `Articulo`    |
 
 `ArticuloAlimenticio` y `ArticuloElectronico` **no** necesitan escribir `implements Identificable` ni redefinir `getCodigo()` — lo heredan de `Articulo` automáticamente.
 
@@ -65,31 +69,34 @@ Mismo método, distinta lógica → eso es **polimorfismo de comportamiento**.
 
 ## Diferencia clave entre ambas
 
-| | `Identificable` | `Calculable` |
-|---|---|---|
-| **Propósito** | Identidad (¿quién sos?) | Comportamiento (¿qué hacés?) |
-| **La implementa** | `Categoria` y `Articulo` (clase base) | Solo los subtipos concretos |
-| **Herencia** | Los subtipos la heredan sin hacer nada | Cada subtipo la implementa distinto |
-| **Se usa en** | `Repositorio<T extends Identificable>` | `toString()` y lógica de precios |
+|                         | `Identificable`                         | `Calculable`                      |
+| ----------------------- | ----------------------------------------- | ----------------------------------- |
+| **Propósito**    | Identidad (¿quién sos?)                 | Comportamiento (¿qué hacés?)     |
+| **La implementa** | `Categoria` y `Articulo` (clase base) | Solo los subtipos concretos         |
+| **Herencia**      | Los subtipos la heredan sin hacer nada    | Cada subtipo la implementa distinto |
+| **Se usa en**     | `Repositorio<T extends Identificable>`  | `toString()` y lógica de precios |
 
 ---
-## 🔄 Infografía sobre las interfaces del proyecto  
+
+## Diagramas de Interfaces y clases que las implementan
+
+<div align="center">
+  <img src="../assets/interfaces y clases diagram.png" alt="Diagrama interfaces" width="800">
+</div>
+
+`Articulo` no implementa `Calculable` porque la clase base no sabe qué IVA aplicar — esa decisión se delega a cada subtipo. Es un diseño intencional: forzar que cada tipo concreto defina su propia regla de precio.
+
+<div align="center">
+  <img src="../assets/interfaces2.png" alt="Diagrama interfaces" width="800">
+</div>
+
+---
+
+## 🔄 Infografía sobre las interfaces del proyecto
 
 <div align="center">
   <img src="../assets/interfaces.png" alt="Diagrama interfaces" width="800">
 </div>
 
 ---
-## Diagrama conceptual
-
-<div align="center">
-  <img src="../assets/interfaces2.png" alt="Diagrama interfaces" width="800">
-</div>
-
-
-
-`Articulo` no implementa `Calculable` porque la clase base no sabe qué IVA aplicar — esa decisión se delega a cada subtipo. Es un diseño intencional: forzar que cada tipo concreto defina su propia regla de precio.
-
----
-
 [← Volver al README](../README.md#doc)
